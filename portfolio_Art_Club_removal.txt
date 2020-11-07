@@ -1,0 +1,106 @@
+{=(COMMENT):Temporary Require, for testing and debugging purposes. If you want the command to be used by a certain role and/or in a certain channel, replace the ID below with your role and/or channel IDs separated by commas.}
+{=(cmd.Channel):656583804344860745}
+{require(Please use <#{cmd.Channel}> to use the Portfolio command!):{cmd.Channel}}
+{=(COMMENT):Deletes the command invocation and the bot's default commands' responses. Also overrides permissions, to allow the user to create the Portfolio trigger.}
+{delete}{silent}{override}
+{=(COMMENT):Put your prefix here. Will dynamically be used for command's instructions.}
+{=(prefix):/}
+
+{=(COMMENT):ID and name of the Portfolio role.}
+{=(role.ExistingPortfolio):684095338289561766}
+{=(role.name.ExistingPortfolio):/Portfolio}
+{=(COMMENT):Checks if the user already created their Portfolio trigger. Condition to reuse later.}
+{=(check.role.ExistingPortfolio):{if({contains({role.ExistingPortfolio}):{user(roleids)}}==true):true|false}}
+
+{=(COMMENT):----ARGUMENT LOWERING AND CHECKS----}
+{=(largs):{lower:{args}}}
+{=(arg1):{list(0):{join(,):{args}}}}
+{=(arg2):{list(1):{join(,):{args}}}}
+{=(noargs):{if({args}==):true|false}}
+{=(COMMENT):Checks if the first argument is "add". Condition to reuse later.}
+{=(check.args.add):{if({arg1}==add):true|false}}
+{=(COMMENT):Checks if the first argument is "remove". Condition to reuse later.}
+{=(check.args.remove):{any({arg1}==remove|{arg1}==delete):true|false}}
+{=(COMMENT):Checks if the specified arguments contain any link at all. Condition to reuse later.}
+{=(check.link):{if({in(http):{args(2)}}==true):true|false}}
+{=(check.linkafter):{if({in(http):{args(3+)}}==true):true|false}}
+
+{=(COMMENT):Checks if the specified target is someone else than the user. Condition to reuse later.}
+{=(check.isTargetUser):{if({target(id)}=={user(id)}):true|false}}
+
+{=(COMMENT):Second wave of checks to conditionally display different outputs depending on the situation.}
+{=(mention.TargetisUser):{if({check.isTargetUser}==true):{user(mention)}}}
+{=(msg.link):{if({check.link})==true:{args}}}
+
+{=(COMMENT):Blank variable to prevent blank elses to output two empty brackets.}
+{=():}
+
+{=(COMMENT):----COMMAND CHECKS AND EXECUTION----}
+{=(COMMENT):Trigger creation command's content.}
+{=(cmd.Trigger.creation):c:ar add "portfolio {user(mention)}" __**{user}**'s Portfolio:__
+<{args(2)}> {args(3+)}}
+{=(COMMENT):Trigger deletion/removal command's content.}
+{=(cmd.Trigger.removal):c:ar remove portfolio {user(mention)}}
+
+{=(COMMENT):Role to Give to the user after they added their portfolio, preventing them from adding it again.}
+{=(cmd.RoleToGive):c:role add {user(id)} {role.ExistingPortfolio}}
+
+{=(COMMENT):Role to Remove to the user after they removed their portfolio, allowing them to add a new one.}
+{=(cmd.RoleToRemove):c:role remove {user(id)} {role.ExistingPortfolio}}
+
+{=(COMMENT):Full check of Portfolio addition or not.}
+{=(check.cmdToExecute):{all({check.role.ExistingPortfolio}==false|{check.args.add}==true|{check.link}==true|{check.linkafter}==false|{check.isTargetUser}==true|{arg2}!=):true|false}}
+{=(check.cmdToRemove):{all({check.role.ExistingPortfolio}==true|{check.args.remove}==true|{check.isTargetUser}==true):true|false}}
+
+{=(COMMENT):Conditionally calls the Trigger creation command, if they don't already have the ExistingPortfolio role, if the first argument is "add", if the user specified any link, if the user didn't mention anyone in their command (aside from themselves eventually), and if they added any portfolio content after "add" starting from the 3rd argument.}
+{=(check.cmd.Trigger.creation):{if({check.cmdToExecute}==true):{cmd.Trigger.creation}|{if({check.cmdToRemove}==true):{cmd.Trigger.removal}}}}
+{=(COMMENT):Conditionally calls the command to give the ExistingPortfolio Role when the same conditions as above are met.}
+{=(check.cmd.RoleToGive):{if({check.cmdToExecute}==true):{cmd.RoleToGive}|{if({check.cmdToRemove}==true):{cmd.RoleToRemove}}}}
+
+{=(COMMENT):Actual command execution.}
+{{check.cmd.Trigger.creation}}
+{{check.cmd.RoleToGive}}
+
+{=(COMMENT):----OUTPUTS AND ERROR MESSAGES----}
+{=(msg.Instructions):Use `{prefix}portfolio @someone` to check someone's Portfolio.
+You can know if someone added theirs by checking the presence of the `{role.name.ExistingPortfolio}` role in their roles list.}
+
+{=(COMMENT):First part of the message to display if the user specified "add" as the first argument but with nothing else.}
+{=(msg.NoArgs1):<a:AO_No:613463514501349386> **{user}**, if you're trying to add your own Portfolio to the server, you need to specify **only one link first** along with the command.}
+{=(COMMENT):First part of the message to display if the user already added their Portfolio to the server.}
+{=(msg.NoArgs1.1):<a:AO_No:613463514501349386> **{user}**, you already added your own Portfolio to the server.}
+{=(COMMENT):Second part of the message to display. Contains all the instructions.}
+{=(msg.NoArgs2):If you're willing to check someone else's Portfolio, make sure you mention them along with the command.
+__Usage Example:__ ```HTML
+{prefix}portfolio add http://myportfolio.com/
+If you need any form of art, mention me here or DM me! Thanks!``````HTML
+{prefix}portfolio @someone```}
+
+{=(COMMENT):Message to display when the requirements are met.}
+{=(msg.Success):<a:AO_Yes:613463515474296867> **{user}**, you successfully **added** your personal Portfolio to the server!
+{msg.Instructions}}
+{=(COMMENT):Message to display when the user removes their current Portfolio.}
+{=(msg.Remove):<a:AO_Yes:613463515474296867> **{user}**, you successfully **removed** your personal Portfolio to the server.
+{msg.NoArgs2}}
+
+{=(COMMENT):Outputs different messages depending on the situation.}
+{=(msg.Output):{if({check.cmdToExecute}==true):{msg.Success}|{if({check.cmdToRemove}==true):{msg.Remove}|{and({check.role.ExistingPortfolio}==true|{args(1)}==add):{msg.NoArgs1.1}
+{msg.NoArgs2}|{any({args}==|{check.args.add}==true):{msg.NoArgs1}
+{msg.NoArgs2}}}}}}
+
+{=(COMMENT):Debug Outputs. Only for testing purposes.}
+{=(msg.Debug):__Debug Outputs:__
+Do I have the ExistingPortfolio role? {if({check.role.ExistingPortfolio}==true):yes|no}
+Is the first argument "add"? {if({check.args.add}==true):yes|no}
+Is the first argument "remove" or "delete"? {if({check.args.remove}==true):yes|no}
+Is there more than one argument? {if({arg2}!=):yes|no}
+Is there a link? {if({check.link}==true):yes|no}
+Is the user the target? {if({check.isTargetUser}==true):yes|no}
+Are all the conditions met to add? {if({check.cmdToExecute}==true):yes|no}
+Are all the conditions met to remove? {if({check.cmdToRemove}==true):yes|no}
+First argument: {arg1}
+Second argument: {arg2}
+Arguments: {args}}
+
+{=(COMMENT):Calls the output variable to print it to the user.}
+{msg.Output}

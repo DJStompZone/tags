@@ -1,0 +1,52 @@
+{delete}
+
+{=(i):#:a,b,c,d,e,f,0,1,2,3,4,5,6,7,8,9}
+{=(hex):{{i}}{{i}}{{i}}{{i}}{{i}}{{i}}}
+{embed(color):#{hex}}
+
+{=(COMMENT):Class/Career [20]}
+{=(base.class):Pirate,Centurion,Knight,Barbarian,Detective,Mage,Assassin,Cyborg,Android,Elemental,Wizard / Shaman,Undertaker,Merchant,Barmaid,Soldier,Monk,Paladin,Cleric,Necromancer,Cowboy,Hunter,Mercenary,Scientist,Diplomat,Scholar,Outlaw,Seer / Oracle,Witch,Bounty Hunter,Astrologer,Technician,Mechanic,Blacksmith,Medic,Adventurer,Advisor,Guard,Navigator/Guide,Nobility}
+{=(class):{#:{base.class}}}
+
+{=(COMMENT):Species [20]}
+{=(base.species):Human,Goblin,Elf,Minotaur,Dragonborn,Alien,Halfling,Nymph,Giant,Orc,Satyr,Vampire,Ent,Demon,Faerie,Troll,Gnome,Dwarf,Siren,Mutant}
+{=(species):{#:{base.species}}}
+
+{=(COMMENT):Genre [20]}
+{=(base.genre):Whimsical,Western,Horror,Science Fiction,Steampunk,Fable/Fairytale,Fantasy,Mystery,Action / Adventure,Mech,Mythological,Crime / Detective,Superhero,Space Opera,Post-apocalyptic,Dystopian,Space Fantasy,Urban,Surreal/Dream,War}
+{=(genre):{#:{base.genre}}}
+
+{=(COMMENT):Distuinguishing Elements [40]}
+{=(base.elements):Pet or Mount,Artificial Bodypart,Wounded / Scarred,Unusual Haircut,Tattoo,Jewelry / Adornment,Bodypaint/Makeup,Plump,Old,Facial Hair,Eyewear,Prop,Weapon,Muscular,Hood / Shroud,Eyes,Good Looks,Gair Colors,Magical Limbs,Sexiness,Glowing Shape / Pattern,Animal Facial Feature,Animal Horns / Claws,Animal Legs / Fur,Animal Tail / Wings,Albinism,Shadowness,Extra Limbs,Unusual Proportion,Expression,Crest / Emblem,Headpiece,Skincolor,Thorns/Bone Spikes,Diseased,Bald,Mask,Glowing Bodypart,Eyepatch,Posture}
+{=(elements):{#:{base.elements}}}
+
+{=(COMMENT):Motif [20]}
+{=(base.motif):Dragon,Wings,Ram,Lion,Snake,Bird,Triangle,Hexagonal,Cubic,Circular,Spherical,Geometric,Floral,Wave,Tree,Sun (Radial),Leaf,Herringbone,Interwoven,Lattice}
+{=(motif):{#:{base.motif}}}
+
+{=(COMMENT):Time [13]}
+{=(base.time):Prehistoric,Ancient Empires,Middle Ages,Renaissance Periods,Victorian,Western,Industrial,Steampunk,Art Deco / Nouveau,Modern / Contemporary,Near-future,Futuristic,Post-Apocalyptic}
+{=(time):{#:{base.time}}}
+
+{=(COMMENT):Gender [5]}
+{=(base.gender):Male,Female,Transgender,Androgynous,Nonbinary}
+{=(gender):{#:{base.gender}}}
+
+{=(COMMENT):EMBED MANAGEMENT}
+{=(author.img):{replace(.gif,.png):{user(avatar)}}}
+{=(author.txt):Requested by {user}}
+
+{=(title)::game_die: Randomly-Generated Original Character}
+
+{=(f1):Gender}
+{=(f2):Species}
+{=(f3):Class / Career}
+{=(f4):Genre}
+{=(f5):Time}
+{=(f6):Motif}
+{=(f7):Distinguishing Elements}
+
+
+
+
+{"fields":[{"name":"Gender","value":"Female","inline":true},{"name":"Species","value":"Elf","inline":true},{"name":"Class / Career","value":"Witch","inline":true},{"name":"Genre","value":"Whimsical","inline":true},{"name":"Time","value":"Middle Ages","inline":true},{"name":"**Motif**","value":"Leaf","inline":true},{"name":"Distinguishing Elements","value":"Animal Tail / Wings\n\nDerived from Educational Worksheets on Character Writing & Design.","inline":false}],"title":":game_die: Randomly-Generated Original Character","author":{"name":"Requested by Asty'","icon_url":"https://cdn.discordapp.com/avatars/149926720114262016/a_3a356de7534cf712bf35fa6fed059af8.jpg?size=1024"},"color":8311585,"footer":{"text":"!ocrng ┃ 300,000,000 different combinations!"}}

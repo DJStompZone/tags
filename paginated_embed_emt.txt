@@ -1,0 +1,16 @@
+{=(Comment):Sets how many pages there are.}
+{=(avp):1 2 3 4}
+{=(check):{if({contains({args}):{avp}}==true):true|false}}
+
+{=(Comment):Sets each page content.}
+{=(p1):This is my first page content.}
+{=(p2):This is my second page content.}
+{=(p3):This is my third page content.}
+{=(p4):This is my fourth page content.}
+
+{=(error):Error, that page doesn't exist.}
+{=(noargs):Available Pages: {avp}}
+
+{=(output):{if({args}==):{noargs}|{and({args}!=|{check}==true):{p{1}}|{if({check}==false):{error}}}}}
+
+{=(footer):Type !emt [page] to access the page of your choice.}

@@ -1,0 +1,58 @@
+{=(COMMENT):Sets the embed's side color to Discord's default embed's background.}
+{embed(color):#2f3136}
+
+{=(COMMENT):Emoji used as a "bullet point" for the instructions.}
+{=(twr):<:twright:688074727167754320>}
+
+{=(COMMENT):Prefix and tag name used. Will be shown in the instructions to fit the tag usage in your server.
+Reminder: You can use "!tag alias per percent" to add an alias called "per" to the "percent" tag.}
+{=(prefix):!}
+{=(tagname):per}
+
+{=(COMMENT):Instructions, with command usage examples and math formulas.}
+{=(example):{twr} **What is x/y in p%?**
+`{prefix}{tagname} 5/156` ─ `y = x * 100 / p`
+
+{twr} **What is p% of x?**
+`{prefix}{tagname} 5% of 5` ─ `y = x * p / 100`
+
+{twr} **What is x increased/decreased by p%?**
+`{prefix}{tagname} 5±2%` ─ `y = x * (100 ± p / 100)`}
+
+{=(COMMENT):Creates artificial named options depending on some conditions. Returns "fail" when none is met.}
+{=(option):{if({in(/):{args}}==true):outof|{if({in(of):{args}}==true):perof|{if({in(+):{args}}==true):increase|{if({in(-):{args}}==true):decrease|fail}}}}}
+
+{=(COMMENT):Sets the actual numbers to use in each of their corresponding formula later.}
+{=(num.outof):{replace( ,):{args(1):/}} {replace( ,$&):{args(2):/}}}
+{=(num.perof):{replace( ,):{args(1):%}} {replace( ,$&):{args(2): of }}}
+{=(num.increase):{replace( ,):{args(1):+}} {replace( ,$&):{replace(%,):{args(2):+}}}}
+{=(num.decrease):{replace( ,):{args(1):-}} {replace( ,$&):{replace(%,):{args(2):-}}}}
+
+{=(COMMENT):Grabs the first and second item of the number variable above to actually be able to use them.}
+{=(num1):{num.{option}(1)}}
+{=(prenum2):{num.{option}(2)}}
+{=(COMMENT):The "$&" part allows the user to type spaces and even text freely after their query for more versality.}
+{=(num2):{prenum2(2):$&}}
+
+{=(COMMENT):Math formula of each option.}
+{=(form.outof):{m:{num1}*100/{num2}}Z%}
+{=(form.perof):{m:{num2}*{num1}/100}}
+{=(form.increase):{m:abs({num1}*(100+{num2})/100)}Z}
+{=(form.decrease):{m:abs({num1}*(100-{num2})/100)}Z}
+
+{=(COMMENT):Result, with .0 removed when the result should be truncated.}
+{=(result):{replace(%,):{replace(Z,):{replace(.0Z,):{form.{option}}}}}}
+{=(COMMENT):Rounded result, with a custom amount of decimals.}
+{=(decimals):2}
+{=(rresult):{m:round({result}*10^{decimals})/10^{decimals}}{if({option}==outof):%}}
+
+{=(COMMENT):Conditional title depending on the option found.}
+{=(title.outof):Percentage of {num1}/{num2}:}
+{=(title.perof):{num1}% of {num2}:}
+{=(title.increase):{num1} + {num2}%:}
+{=(title.decrease):{num1} - {num2}%:}
+
+{=(COMMENT):The *only* thing we call in the embed's field as the output. Returns the instructions if no argument or no available option is found, otherwise returns a custom title and the query's result.}
+{=(title):{title.{option}}}
+{=(output):{any({1}==|{option}==fail):{example}|**{title}**
+{rresult}}}

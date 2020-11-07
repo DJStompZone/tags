@@ -1,0 +1,41 @@
+{=(COMMENT):Full Link No Playlist VidID}
+{=(fl):{and({in(watch?v=):{1}}==true|{in(&list):{1}}==false):{args(2):watch?v=}}}
+
+{=(COMMENT):Full Link Playlist VidID}
+{=(flc):{if({in(watch?v=):{1}}==true):{args(2):watch?v=}}}
+{=(fll):{and({in(&list):{flc}}==true|{in(&list):{1}}==true):{flc(1):&list}}}
+
+{=(COMMENT):Short Link No Playlist VidID}
+{=(sl):{and({in(youtu.be):{1}}==true|{in(?list):{1}}==false):{args(-0):/}}}
+
+{=(COMMENT):Short Link Playlist VidID}
+{=(slc):{if({in(youtu.be):{1}}==true):{args(-0):/}}}
+{=(sll):{and({in(?list):{slc}}==true|{in(?list):{1}}==true):{slc(1):?list}}}
+
+{=(COMMENT):Conditionally grabs the corresponding video ID.}
+{=(vidid):{fl}{fll}{sl}{sll}}
+
+{=(COMMENT):Checks for invalid links and displays an error message without a DL Link.}
+{=(error):{if({vidid}==):true|false}}
+{=(errorm):Invalid YouTube Video Link provided. Try again with a Valid Link.}
+
+{=(COMMENT):URL used for the Hyperlink.}
+{=(url):https://www.y2mate.com/youtube-mp3/{vidid}}
+
+{=(COMMENT):Hyperlink Format. Clickable Link within the Embed.}
+{=(fmt):[Download MP3 from YouTube Link]({url} "Can switch to other formats on the link too.")}
+{=(hyperlink):{if({error}==false):{fmt}|{errorm}}}
+
+{=(noargs):Please specify a YouTube video link along with the command.
+Allows for playlist links for both full and shortened links.
+You can change the format of the file to download directly on the link provided by this command. (MP3, MP4, M4A)}
+
+
+---------------EMBED
+
+<:youtube:637507344443637764> YouTube Downloader
+
+{break({args}==):{noargs}}
+{hyperlink}
+
+Command made by Asty'

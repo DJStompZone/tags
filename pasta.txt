@@ -1,0 +1,77 @@
+
+{=(COMMENT):Available Long- and medium-length Pasta}
+{=(avLong):barbine bavette bigoli bucatini busiate capellini fedelini ferrazuoli fettuccine fileja linguine lagane lasagna maccheroni macheroncini mafalde matriciani pappardelle perciatelli pici pillus rustiche sagne scialatelli spaghetti stringozzi sufilindeu tagliatelle taglierini trenette tripoline vermicelli zitti}
+
+{=(COMMENT):Pasta Objects and their properties. Type/Name - Description - Translation - Synonym - Origin - Image}
+{=({avLong(1)}):Barbine~Thin strands, often coiled into nests~Little beards~Barbina~N/A~https://render.fineartamerica.com/images/rendered/default/poster/10/8/break/images-medium/1-barbina-pasta-photo-researchers-inc.jpg}
+{=({avLong(2)}):Bavette~Narrower version of tagliatelle.~Bibs~Baverine, bavettine, lasagneddi (in Sicily)~Liguria~https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Bavette_side.png/1200px-Bavette_side.png}
+{=({avLong(3)}):Bigoli~Thick, softer, spaghetti-like pasta. Made with whole wheat rather than durum. Sometimes made with duck egg.~From bigolaro, the pasta press used to make bigoli~Fusarioi~Veneto~https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Bigoli2.jpg/800px-Bigoli2.jpg}
+{=({avLong(4)}):Bucatini~Thick spaghetti-like pasta with a hole running through the center~Hollow straws Translated from Italian: buco, meaning "hole", and Italian: bucato, meaning "pierced".~Boccoloti, perciatellini, foratini, fidelini bucati, fide bucate, agoni bucati, spilloni bucati~Lazio~https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Bucatini.jpg/800px-Bucatini.jpg}
+{=({avLong(5)}):Busiate (or Busiati)~Type of long macaroni. Often coiled around a twig of local weed.~From busa, meaning "reed".~Subioti, fusarioi, maccheroni bobbesi, busa, ciuffolitti (Abruzzo), gnocchi del ferro~Sicily (particularly Trapani) Sardinia~https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Busiate2.jpg/800px-Busiate2.jpg}
+{=({avLong(6)}):Capellini~Very thin spaghetti, often coiled into nests. Capelli d'angelo are slightly thinner.~Thin hair, little hair~Angel Hair, Capelli d'angelo, cabellos de angel, capelvenere, fidelini, fedelini, cappellini, sopracappellini, capellini fini, bassetti, tagliolini a nido, barbine a nido, ramicia, vrimiciddi~Liguria~https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Capelli_angelo.jpg/800px-Capelli_angelo.jpg}
+{=({avLong(7)}):Fedelini~Very thin spaghetti~Little faithful ones~N/A~N/A~https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Fedelini.jpg/800px-Fedelini.jpg}
+{=({avLong(8)}):Ferrazuoli~Similar to a twisted buccato with a cleft running on the side~Possibly from the thin iron square used to create the cleft~Cannucce~Calabria~https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Ferrazzuoli.jpg/800px-Ferrazzuoli.jpg}
+{=({avLong(9)}):Fettuccine~Ribbon of pasta approximately 6.5 millimeters wide. Larger and thicker than tagliatelle~Little ribbons: from affettare, "to slice".~Lasagnette, fettucce, ramicce, sagne~Rome~https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Fettuccine.jpg/800px-Fettuccine.jpg}
+{=({avLong(10)}):Fileja~Elongated screw.~N/A~filleda, filateddhi, filatelli, fusilli avellinesi, maccaruni aru ferru, ricci di donna~Vibo Valentia (Calabria), Avellino (Campania)~https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Fileja.jpg/800px-Fileja.jpg}
+{=({avLong(11)}):Linguine~Flattened spaghetti~Little tongues~Bavettine, bavette fini, radichini, linguettine~N/A~https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Linguine2.jpg/800px-Linguine2.jpg}
+{=({avLong(12)}):Lagane~Wide pasta~N/A~Lasagnoni, Bardele~N/A~https://www.the-pasta-project.com/wp-content/uploads/2017/07/lagane-pasta-5-001-4-640x433.jpg}
+{=({avLong(13)}):Lasagna~Square or rectangle sheets of pasta that sometimes have fluted edges (lasagne ricce). The square of pasta is lasagna while the dish is lasagne~Possibly from Latin lasanum or Greek lasonon, "Cooking pot", or the Greco-Roman laganum, a flat piece of bread.~bardele, lasagnoni (Veneto); capellasci (Liguria); sagne (Salento); lagana (Apulia); the fluted version can also be doppio festone, sciabo, sciablo~N/A~https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Lasagne.png/800px-Lasagne.png}
+{=({avLong(14)}):Maccheroni alla molinara~Very thick, long, hand-pulled pasta.~The miller’s wife’s pasta~N/A~Abruzzo~https://upload.wikimedia.org/wikipedia/en/thumb/c/cd/Mac_Molinara_Tomato_Sauce.JPG/800px-Mac_Molinara_Tomato_Sauce.JPG}
+{=({avLong(15)}):Maccheroncini di Campofilone~Thin strands of egg-based pasta. Similar to Capelli d'angelo.~N/A~N/A~Marche~https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Maccheroncini_campofilone.jpg/800px-Maccheroncini_campofilone.jpg}
+{=({avLong(16)}):Mafalde~Long rectangular ribbons with ruffled sides.~Named in honor of Princess Mafalda of Savoy~Reginette, frese, tagliatelle nervate, signorine, trinette, ricciarelle, sfresatine, nastri, nastrini~Naples~https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Reginette.jpg/800px-Reginette.jpg}
+{=({avLong(17)}):Matriciani~Similar to perciatelli, but folded over rather than hollowed out~N/A~N/A~N/A~https://www.vincenzosplate.com/wp-content/uploads/2016/07/amatriciana.png}
+{=({avLong(18)}):Pappardelle~Thick flat ribbons of egg-based dough~From Tuscan papparsi, "to pig out".~Papparelle, paparele (Veneto); paspardelle (Marche)~Tuscany and northern Italy~https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Pappardelle3.jpg/800px-Pappardelle3.jpg}
+{=({avLong(19)}):Perciatelli~"Virtually identical to bucatini"~From *perciare*, "to hollow"~Maccheroncelli, Maccheronicini, Mezzanelli, Long Macaroni~Campania~https://upload.wikimedia.org/wikipedia/commons/4/4e/Perciatelli.jpg}
+{=({avLong(20)}):Pici~Very thick, irregular and long, hand-rolled pasta.~From *appiciare*, to "stick".~Lunghetti (Montalcino); pinci (Montepulciano); umbrici/ciriole (Umbria)~Tuscany~https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Pici3.jpg/800px-Pici3.jpg}
+{=({avLong(21)}):Pillus~Very thin ribbons cooked in beef broth~N/A~Lisanzedas, a variation; large discs in lasagne-like layers~Sardinia~https://d37va2rovhwkkr.cloudfront.net/preview_images/news/3956_0.jpg}
+{=({avLong(22)}):Rustiche~Serrated ribbons~literally the feminine plural of *rustico*, meaning 'rustic'~N/A~Apulia~https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Rustiche_top.jpg/800px-Rustiche_top.jpg}
+{=({avLong(23)}):Sagne 'ncannulate~Long tube formed of twisted ribbon~Caned lasagne~N/A~N/A~https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Sagne_ncannulate_pomodoro.jpg/800px-Sagne_ncannulate_pomodoro.jpg}
+{=({avLong(24)}):Scialatelli (or Scialatielli)~Short, flat ribbons.~N/A~N/A~Sorrento~https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Scialatielli.jpg/800px-Scialatielli.jpg}
+{=({avLong(25)}):Spaghetti~A long, thin, cylindrical pasta of Italian origin, made of semolina or flour and water. Spaghettini and spaghettoni are slightly thinner or thicker, respectively.~"Little strings". *Spaghetti* is the plural form of the Italian word *spaghetto*, which is a diminutive of *spago*, meaning "thin string" or "twine".~Fide/fidi, fidelini, ristoranti, vermicelloni, filatelli, vermicelloni giganti~N/A~https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Spaghetti2.jpg/800px-Spaghetti2.jpg}
+{=({avLong(26)}):Stringozzi~Similar to shoelaces~Shoestring-like, shoelaces~N/A~N/A~https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Stringozzi.jpg/450px-Stringozzi.jpg}
+{=({avLong(27)}):Su Filindeu~Extremely rare pasta, made of 256 equal strands of thinly pulled and folded dough and laid in the sun to dry.~The threads (or wool) of God~N/A~Sardinia~https://www.iitaly.org/sites/default/files/styles/article-slideshow-visual/public/slideshow_pro/gran-tour-italia-sardegna-filindeu-oriente-la-mian_orig.jpg}
+{=({avLong(28)}):Tagliatelle~Ribbons of egg-based pasta. Generally narrower than fettuccine.~From the Italian *tagliare*, meaning "to cut".~Tagliarelli, reginelle, fresine, nastri, fettuccelle, fettucce romane, fiadi, tagliolini; tagliatelle smalzade (Trentino); lesagnetes (Veneto); bardele (Lombardia); fettuccine (Lazio); pincinelle (Colonna); tagghiarini (Sicily); taddarini (Sardinia)~Emilia-Romagna (part. Bologna)~https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Tagliatelles2.jpg/779px-Tagliatelles2.jpg}
+{=({avLong(29)}):Taglierini~Thinner version of tagliatelle~From the Italian *tagliare*, meaning "to cut".~Tagliolini; tagliatini (Tuscany); tajarin (Piedmont)~Liguria, Piedmont~https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Taglioni_side.png/800px-Taglioni_side.png}
+{=({avLong(30)}):Trenette~Thin ribbon ridged on one side. Slightly thicker than linguine.~N/A~N/A~N/A~https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Trenette_side.jpg/800px-Trenette_side.jpg}
+{=({avLong(31)}):Tripoline~Thick ribbon ridged on one side~N/A~Signorine~N/A~https://pastafits.org/wp-content/uploads/2018/08/npa_TRIPOLINI_H_CORRECTED.jpg}
+{=({avLong(32)}):Vermicelli~A traditional pasta round that is thinner than spaghetti.~Little worms~Very thin spaghetti~Campania~https://previews.123rf.com/images/elvan74/elvan741606/elvan74160600026/59219338-raw-vermicelli-pasta-background-vermicelli-pasta-texture-background-traditional-italian-food-.jpg}
+{=({avLong(33)}):Zitti~Long, narrow hose-like tubes larger than mezzani (also called *mezzi ziti*) or bucatini that are traditionally broken before being put to cook. The addition of the word *rigati* (e.g. ziti rigati) denotes lines or ridges on the pasta's surface. *Ziti candelati* are longer, *zitoni* a bit larger.~Bride and bridegroom (ziti is plural) in Sicilian dialect.~Boccolotti, zitoni, zituane, candele, ziti candelati~Southern Italy~https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Ziti.jpg/800px-Ziti.jpg}
+
+{=():}
+
+{=(COMMENT):Checks if there is a first argument or not.}
+{=(isArgs):{if({args(1)}!=):true|false}}
+
+{=(l1):{lower:{1}}}
+{=(is1long):{contains({l1}):{avLong}}}
+
+{=(pastaName):{{l1}(1):~}}
+{=(pastaDesc):{{l1}(2):~}}
+{=(pastaTrans):{{l1}(3):~}}
+{=(pastaSyn):{{l1}(4):~}}
+{=(pastaOrig):{{l1}(5):~}}
+{=(pastaImg):{all({isArgs}==true|{is1long}==true):{{l1}(6):~}|plaintext}}
+
+
+{=(avLongFormat):`{join(`, `):{avLong}}`}
+{=(avLongComma):{join(, ):{avLong}}}
+
+{=(error):Available Pasta:
+__Long:__
+{avLongFormat}}
+
+{=(footer):!pasta [optional name]}
+
+{=(errorJSON):{"fields":[{"name":"Long- and medium-length Pasta","value":"{avLongComma}","inline":false},{"name":"Short-cut Pasta","value":"{avLongComma}","inline":false},{"name":"Stretched Pasta","value":"{avLongComma}","inline":false}],"title":"Available Pasta Types","color":15123267,"footer":{"text":"{footer}"}}}
+
+{{any({isArgs}==false|{is1long}==false):c:cembed {channel(id)} {errorJSON}}}
+{override}
+
+{=(COMMENT):Just a personal reference for the list of available pasta.}
+{=(reference):https://en.wikipedia.org/wiki/List_of_pasta}
+
+{=(COMMENT):Embed's side pasta color.}
+{embed(color):#E6C343}
+
+{=(COMMENT):Base JSON for the embed template I'll be using.}
+{=(baseJSON):{"fields":[{"name":"Synonyms","value":"Baverine, bavettine, lasagneddi (in Sicily)","inline":false},{"name":"Translation","value":"Bibs","inline":true},{"name":"Origin","value":"Liguria","inline":true}],"title":"Bavette","description":"Narrower version of tagliatelle.","image":{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Bavette_side.png/1200px-Bavette_side.png"},"color":15123267}}

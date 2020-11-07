@@ -1,0 +1,94 @@
+{=(COMMENT):########## Anything to eventually edit is between this comment and the other disclaimer. The command is usable as is without changing anything, but I still included *some* settings just if people want to customize it slightly more and to allow those who are not familiar enough with TagScript to still customize it. ##########}
+
+{=(COMMENT):Change your main prefix and the tag's name below.}
+{=(prefix):!}
+{=(tagname):social}
+
+{=(COMMENT):Sets the embed's side color to the user highest/current color. If you want it to be a specific hex color instead of the user color, make sure to replace the user color block with a hex code and with the hashtag sign before it.}
+{embed(color):{user(color)}}
+
+{=(COMMENT):Deletes the user input (aka all the social media links specified)/command invocation. I don't see why anyone would want to remove this, but if you want to, remove the delete block below.}
+{delete}
+
+
+{=(COMMENT):########## Please don't edit anything below this comment if you don't know what you're doing. Well you can, but don't count on me to fix it then. ##########}
+
+{=(COMMENT):Available social media to set as auto-hyperlinks.}
+{=(available):youtube twitch twitter discord instagram tumblr}
+
+{=(COMMENT):Emojis to use for each social media.}
+{=(youtube):<:YouTube:733866137175195699>}
+{=(twitch):<:Twitch:733866137007423511>}
+{=(twitter):<:Twitter:733866137015812140>}
+{=(discord):<:Discord:733866135417520199>}
+{=(instagram):<:Instagram:733866136457838682>}
+{=(tumblr):<:Tumblr:734075508425359399>}
+
+{=(COMMENT):Spacing out each social media name to know where it is}
+{=(checks):{replace(youtube,. youtube .):{replace(twitch,. twitch .):{replace(twitter,. twitter .):{replace(discord,. discord .):{replace(instagram,. instagram .):{replace(tumblr,. tumblr .):{args}}}}}}}}
+
+{=(COMMENT):Checks where each social media's link is. Return their index +1 (because the DNS is spaced out).}
+{=(c.youtube):{replace(???,5):{replace(!!!,2):{replace(2,1):{replace(5,!!!):{replace(8,3):{replace(11,4):{replace(14,???):{replace(17,6):{index(youtube):0 {checks} no}}}}}}}}}}
+{=(c.twitch):{replace(???,5):{replace(!!!,2):{replace(2,1):{replace(5,!!!):{replace(8,3):{replace(11,4):{replace(14,???):{replace(17,6):{index(twitch):0 {checks} no}}}}}}}}}}
+{=(c.twitter):{replace(???,5):{replace(!!!,2):{replace(2,1):{replace(5,!!!):{replace(8,3):{replace(11,4):{replace(14,???):{replace(17,6):{index(twitter):0 {checks} no}}}}}}}}}}
+{=(c.discord):{replace(???,5):{replace(!!!,2):{replace(2,1):{replace(5,!!!):{replace(8,3):{replace(11,4):{replace(14,???):{replace(17,6):{index(discord):0 {checks} no}}}}}}}}}}
+{=(c.instagram):{replace(???,5):{replace(!!!,2):{replace(2,1):{replace(5,!!!):{replace(8,3):{replace(11,4):{replace(14,???):{replace(17,6):{index(instagram):0 {checks} no}}}}}}}}}}
+{=(c.tumblr):{replace(???,5):{replace(!!!,2):{replace(2,1):{replace(5,!!!):{replace(8,3):{replace(11,4):{replace(14,???):{replace(17,6):{index(tumblr):0 {checks} no}}}}}}}}}}
+
+{=(COMMENT):Actual hyperlink to return for every social media. Returns nothing if not found.}
+{=(l.youtube):{if({c.youtube}!=-1):$%&[{youtube}]({args({c.youtube})})$%&}}
+{=(l.twitch):{if({c.twitch}!=-1):$%&[{twitch}]({args({c.twitch})})$%&}}
+{=(l.twitter):{if({c.twitter}!=-1):$%&[{twitter}]({args({c.twitter})})$%&}}
+{=(l.discord):{if({c.discord}!=-1):$%&[{discord}]({args({c.discord})})$%&}}
+{=(l.instagram):{if({c.instagram}!=-1):$%&[{instagram}]({args({c.instagram})})$%&}}
+{=(l.tumblr):{if({c.tumblr}!=-1):$%&[{tumblr}]({args({c.tumblr})})$%&}}
+
+{=(COMMENT):Hyperlinks to return.}
+{=(links):{replace($%&, ):{l.youtube}{l.twitch}{l.twitter}{l.discord}{l.instagram}{l.tumblr}}}
+
+{=(COMMENT):Returns the position of each social media's link in the user arguments in a variable, next to one another.}
+{=(c.all):{c.youtube} {c.twitch} {c.twitter} {c.discord} {c.instagram} {c.tumblr}}
+
+{=(COMMENT):I tried several ways to optimize the part below, but anything I tried was more of a hassle than hardcoding it like how it is now, so *oh well*. It basically returns "empty" when the argument is empty, "good" when the argument *contains* an available social media, otherwise/else returns "no", for each argument, up to 6.}
+{=(jargs):{join(,):{args}}}
+{=(first):{list(0):{jargs}}}
+{=(c.first):{if({first}!=):{any({in({available(1)}):{first}}==true|{in({available(2)}):{first}}==true|{in({available(3)}):{first}}==true|{in({available(4)}):{first}}==true|{in({available(5)}):{first}}==true|{in({available(6)}):{first}}==true):good|no}|empty}}
+{=(second):{list(1):{jargs}}}
+{=(c.second):{if({second}!=):{any({in({available(1)}):{second}}==true|{in({available(2)}):{second}}==true|{in({available(3)}):{second}}==true|{in({available(4)}):{second}}==true|{in({available(5)}):{second}}==true|{in({available(6)}):{second}}==true):good|no}|empty}}
+{=(third):{list(2):{jargs}}}
+{=(c.third):{if({third}!=):{any({in({available(1)}):{third}}==true|{in({available(2)}):{third}}==true|{in({available(3)}):{third}}==true|{in({available(4)}):{third}}==true|{in({available(5)}):{third}}==true|{in({available(6)}):{third}}==true):good|no}|empty}}
+{=(fourth):{list(3):{jargs}}}
+{=(c.fourth):{if({fourth}!=):{any({in({available(1)}):{fourth}}==true|{in({available(2)}):{fourth}}==true|{in({available(3)}):{fourth}}==true|{in({available(4)}):{fourth}}==true|{in({available(5)}):{fourth}}==true|{in({available(6)}):{fourth}}==true):good|no}|empty}}
+{=(fifth):{list(4):{jargs}}}
+{=(c.fifth):{if({fifth}!=):{any({in({available(1)}):{fifth}}==true|{in({available(2)}):{fifth}}==true|{in({available(3)}):{fifth}}==true|{in({available(4)}):{fifth}}==true|{in({available(5)}):{fifth}}==true|{in({available(6)}):{fifth}}==true):good|no}|empty}}
+{=(sixth):{list(5):{jargs}}}
+{=(c.sixth):{if({sixth}!=):{any({in({available(1)}):{sixth}}==true|{in({available(2)}):{sixth}}==true|{in({available(3)}):{sixth}}==true|{in({available(4)}):{sixth}}==true|{in({available(5)}):{sixth}}==true|{in({available(6)}):{sixth}}==true):good|no}|empty}}
+
+
+{=(COMMENT):Puts the above check variables into one variable, to then use it in the "isAnyWrong" variable below. Returns something like "good good no empty empty".}
+{=(c.numbers):{c.first} {c.second} {c.third} {c.fourth} {c.fifth} {c.sixth}}
+
+{=(COMMENT):Checks if any link contains a social media that's not in the list, and if there at least was one user argument.}
+{=(isAnyWrong):{if({contains(no):{c.numbers}}==true):true|false}}
+{=(isArgs):{if({1}!=):true|false}}
+
+{=(msg.Available):**{youtube} [`YouTube`](https://www.youtube.com/)・{twitter} [`Twitter`](https://twitter.com/)⠀  ・{twitch} [`Twitch`](https://twitch.tv/)
+{discord} [`Discord`](https://discord.com/)・{instagram} [`Instagram`](https://instagram.com/)・{tumblr} [`Tumblr`](https://tumblr.com)**}
+{=(msg.Javailable):{join(`, `):`{available}`}}
+
+{=(COMMENT):Error messages and final output.}
+{=(msg.Wrong):{user(mention)}, you specified a social media link that's not currently available to display with this command.
+__Available Social Media:__
+{msg.Available}}
+
+{=(msg.NoArgs):{user(mention)}, please specify at least 1 social media link (and up to 5) along with the command.
+__Available Social Media:__
+{msg.Available}}
+
+{=(output):{if({isArgs}==false):{msg.NoArgs}|{if({isAnyWrong}==true):{msg.Wrong}|{user(mention)}
+{links}}}}
+
+{=(COMMENT):Embed fields.}
+{=(title):Social Media}
+{=(footer):{prefix}{tagname} <links> | Created by Asty'}
+{=(thumbnail):{all({isAnyWrong}==false|{isArgs}==true):{replace(size=1024,size=64):{replace(.gif,.png):{user(avatar)}}}}}

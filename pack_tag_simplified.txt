@@ -1,0 +1,67 @@
+{=(Comment): Put the Required role ID and name the user needs to use this pack.}
+{=(req):665535051114479616}
+{=(reqn):VIP}
+{=(reqm):You do not have the **{reqn}** role to use the banners from this pack.}
+{=(pref):!}
+{=(tagn):pack}
+
+{=():}
+{{any({args}!=|{args}!=help):require({reqm}):{req}}}
+
+{delete}{silence}
+
+{=(Comment): Banners Links.}
+{=(album):https://imgur.com/a/5ZOe4n8}
+
+{=(pack):https://i.imgur.com/1Fh0DMs.jpg}
+{=(b1n):Life is Strange Sunset}
+{=(b1):https://i.imgur.com/JbXc8p7.png}
+{=(b2n):Mirror's Edge}
+{=(b2):https://i.imgur.com/S6KUFAk.png}
+{=(b3n):Red Twilight}
+{=(b3):https://i.imgur.com/1XvSUWN.png}
+{=(b4n):Blue Night Sky}
+{=(b4):https://i.imgur.com/LcX25Bo.png}
+{=(b5n):Anime Fox Girl}
+{=(b5):https://i.imgur.com/uv7Sx68.png}
+{=(b6n):Cyberpunk City}
+{=(b6):https://i.imgur.com/suCZQdR.png}
+{=(b7n):Geometry Spirit}
+{=(b7):https://i.imgur.com/pL3hPuZ.png}
+{=(b8n):Sushi Cat}
+{=(b8):https://i.imgur.com/YyPJvem.png}
+{=(b9n):Dragon Magnificience}
+{=(b9):https://i.imgur.com/0Zf3alQ.png}
+{=(b10n):Submarine Paradise}
+{=(b10):https://i.imgur.com/31J7Kcp.png}
+
+{=(num):1 2 3 4 5 6 7 8 9 10}
+{=(numn):{if({contains({1}):{num}}==true):{b{1}n}}}
+
+
+{=(title):{any({args}==|{args}==help):Level Banners Pack}}
+{=(desc):{any({args}==|{args}==help):This command allows you to use a Level Banner from this Pack that's being displayed when using ``{pref}lvl``.
+There are currently 10 banners available that you can see in the image below.
+
+__Available banners:__
+`1-` **{b1n}**
+`2-` **{b2n}**
+`3-` **{b3n}**
+`4-` **{b4n}**
+`5-` **{b5n}**
+`6-` **{b6n}**
+`7-` **{b7n}**
+`8-` **{b8n}**
+`9-` **{b9n}**
+`10-` **{b10n}**
+
+__Usage:__ ``{pref}{tagn} [number 1-10]``|{if({contains({1}):{num}}==true):You successfully changed your Level Banner to:
+**{numn}**!|The number you specified is not valid. Use a number between 1 and 10.
+``!pack (help)`` for more info.}}}
+{=(dispack):{any({args}==|{args}==help):{pack}|{all({args}!=help|{contains({1}):{num}}==true):{b{1}}}}}
+{=(footer):{any({args}==|{args}==help):Note: You need the {reqn} role to use this pack.}}
+
+{=(banner):{all({args}!=help|{contains({1}):{num}}==true):{b{1}}}}
+
+{embed(color):#36393f}
+{{any({args}!=|{args}!=help):c:lvl bg {banner}|}}

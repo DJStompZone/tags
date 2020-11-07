@@ -1,0 +1,168 @@
+{=(i):#:A,B,C,D,E,F,0,1,2,3,4,5,6,7,8,9}
+
+{=(total):768}
+{=(COMMENT):When the difference between "total" and the sum of the color RGB is less or equal to 290 ("threshold"), text should be white, otherwise black}
+{=(threshold):478}
+
+{=(white):FFFFFF}
+{=(black):000000}
+
+{embed(color):#2f3136}
+
+{=(title):Random Color Palette}
+
+{=(uargs):{replace(#,):{upper:{args}}}}
+{=(COMMENT):Returns the number of arguments}
+{=(howmanychars):{index($%&):{replace(, ):{uargs}} $%&}}
+{=(howmanyargs):{index($%&):{uargs} $%&}}
+
+{=(COMMENT):Sums up all the arguments to then check later if they only contain hex values.}
+{=(hexSum):{m:trunc({join(+):{replace(, ):{replace(A,10):{replace(B,11):{replace(C,12):{replace(D,13):{replace(E,14):{replace(F,15):{uargs}}}}}}}}})}}
+{=(COMMENT):If the value below returns 1, then the user specified at least 6 characters per argument in theory.}
+{=(modulo6):{m:trunc({howmanychars}%6)}}
+
+{=(checkHex):{all({hexSum}=={m:trunc({hexSum}/1)}|{modulo6}==0):true|false}}
+
+{=(isArgs):{if({1}!=):true|false}}
+
+{=(fullCheck):{all({isArgs}==true|{checkHex}==true):true|false}}
+
+{=(listArgs):{join(,):0 {uargs}}}
+
+{=(COMMENT):1st Color}
+{=(c1):{all({list(1):{listArgs}}!=|{checkHex}==true):{uargs(1)}|{{i}}{{i}}{{i}}{{i}}{{i}}{{i}}}}
+{=(sp1):{replace(A,10):{replace(B,11):{replace(C,12):{replace(D,13):{replace(E,14):{replace(F,15):{replace(, ):{c1}}}}}}}}}
+
+{=(h1.Red):{sp1(2)} {sp1(3)}}
+{=(c1.Red):{m:trunc(({h1.Red(1)}*(16^1))+({h1.Red(2)}*(16^0)))}}
+
+{=(h1.Green):{sp1(4)} {sp1(5)}}
+{=(c1.Green):{m:trunc(({h1.Green(1)}*(16^1))+({h1.Green(2)}*(16^0)))}}
+
+{=(h1.Blue):{sp1(6)} {sp1(7)}}
+{=(c1.Blue):{m:trunc(({h1.Blue(1)}*(16^1))+({h1.Blue(2)}*(16^0)))}}
+
+{=(COMMENT):Sum of each R, G and B value for the current color.}
+{=(c1.RGB):{m:trunc({c1.Red}+{c1.Green}+{c1.Blue})}}
+
+{=(c1.txt):{if({c1.RGB}>{threshold}):{black}|{white}}}
+
+{=(COMMENT):2nd Color}
+{=(c2):{all({list(2):{listArgs}}!=|{checkHex}==true):{uargs(2)}|{{i}}{{i}}{{i}}{{i}}{{i}}{{i}}}}
+{=(sp2):{replace(A,10):{replace(B,11):{replace(C,12):{replace(D,13):{replace(E,14):{replace(F,15):{replace(, ):{c2}}}}}}}}}
+
+{=(h2.Red):{sp2(2)} {sp2(3)}}
+{=(c2.Red):{m:trunc(({h2.Red(1)}*(16^1))+({h2.Red(2)}*(16^0)))}}
+
+{=(h2.Green):{sp2(4)} {sp2(5)}}
+{=(c2.Green):{m:trunc(({h2.Green(1)}*(16^1))+({h2.Green(2)}*(16^0)))}}
+
+{=(h2.Blue):{sp2(6)} {sp2(7)}}
+{=(c2.Blue):{m:trunc(({h2.Blue(1)}*(16^1))+({h2.Blue(2)}*(16^0)))}}
+
+{=(COMMENT):Sum of each R, G and B value for the current color.}
+{=(c2.RGB):{m:trunc({c2.Red}+{c2.Green}+{c2.Blue})}}
+
+{=(c2.txt):{if({c2.RGB}>{threshold}):{black}|{white}}}
+
+{=(COMMENT):3rd Color}
+{=(c3):{all({list(3):{listArgs}}!=|{checkHex}==true):{uargs(3)}|{{i}}{{i}}{{i}}{{i}}{{i}}{{i}}}}
+{=(sp3):{replace(A,10):{replace(B,11):{replace(C,12):{replace(D,13):{replace(E,14):{replace(F,15):{replace(, ):{c3}}}}}}}}}
+
+{=(h3.Red):{sp3(2)} {sp3(3)}}
+{=(c3.Red):{m:trunc(({h3.Red(1)}*(16^1))+({h3.Red(2)}*(16^0)))}}
+
+{=(h3.Green):{sp3(4)} {sp3(5)}}
+{=(c3.Green):{m:trunc(({h3.Green(1)}*(16^1))+({h3.Green(2)}*(16^0)))}}
+
+{=(h3.Blue):{sp3(6)} {sp3(7)}}
+{=(c3.Blue):{m:trunc(({h3.Blue(1)}*(16^1))+({h3.Blue(2)}*(16^0)))}}
+
+{=(COMMENT):Sum of each R, G and B value for the current color.}
+{=(c3.RGB):{m:trunc({c3.Red}+{c3.Green}+{c3.Blue})}}
+
+{=(c3.txt):{if({c3.RGB}>{threshold}):{black}|{white}}}
+
+{=(COMMENT):4th Color}
+{=(c4):{all({list(4):{listArgs}}!=|{checkHex}==true):{uargs(4)}|{{i}}{{i}}{{i}}{{i}}{{i}}{{i}}}}
+{=(sp4):{replace(A,10):{replace(B,11):{replace(C,12):{replace(D,13):{replace(E,14):{replace(F,15):{replace(, ):{c4}}}}}}}}}
+
+{=(h4.Red):{sp4(2)} {sp4(3)}}
+{=(c4.Red):{m:trunc(({h4.Red(1)}*(16^1))+({h4.Red(2)}*(16^0)))}}
+
+{=(h4.Green):{sp4(4)} {sp4(5)}}
+{=(c4.Green):{m:trunc(({h4.Green(1)}*(16^1))+({h4.Green(2)}*(16^0)))}}
+
+{=(h4.Blue):{sp4(6)} {sp4(7)}}
+{=(c4.Blue):{m:trunc(({h4.Blue(1)}*(16^1))+({h4.Blue(2)}*(16^0)))}}
+
+{=(COMMENT):Sum of each R, G and B value for the current color.}
+{=(c4.RGB):{m:trunc({c4.Red}+{c4.Green}+{c4.Blue})}}
+
+{=(c4.txt):{if({c4.RGB}>{threshold}):{black}|{white}}}
+
+{=(COMMENT):5th Color}
+{=(c5):{all({list(5):{listArgs}}!=|{checkHex}==true):{uargs(5)}|{{i}}{{i}}{{i}}{{i}}{{i}}{{i}}}}
+{=(sp5):{replace(A,10):{replace(B,11):{replace(C,12):{replace(D,13):{replace(E,14):{replace(F,15):{replace(, ):{c5}}}}}}}}}
+
+{=(h5.Red):{sp5(2)} {sp5(3)}}
+{=(c5.Red):{m:trunc(({h5.Red(1)}*(16^1))+({h5.Red(2)}*(16^0)))}}
+
+{=(h5.Green):{sp5(4)} {sp5(5)}}
+{=(c5.Green):{m:trunc(({h5.Green(1)}*(16^1))+({h5.Green(2)}*(16^0)))}}
+
+{=(h5.Blue):{sp5(6)} {sp5(7)}}
+{=(c5.Blue):{m:trunc(({h5.Blue(1)}*(16^1))+({h5.Blue(2)}*(16^0)))}}
+
+{=(COMMENT):Sum of each R, G and B value for the current color.}
+{=(c5.RGB):{m:trunc({c5.Red}+{c5.Green}+{c5.Blue})}}
+
+{=(c5.txt):{if({c5.RGB}>{threshold}):{black}|{white}}}
+
+
+{=(error):The color(s) you specified is/are not in the proper hexadecimal format.
+__Usage example:__ `[p]palette eeaaee f72bea`
+
+You can specify up to 5 colors, or none and it will randomize the rest for you.
+Even though your format wasn't proper, here is your randomly-generated color palette:}
+
+{=(space):⠀}
+{=(spaces):⠀⠀⠀}
+
+{=(colorurl):https://color-hex.org/color/}
+
+{=(colorinfo):⠀[`{c1}`]({colorurl}{c1} "{c1} Color Info")⠀⠀⠀[`{c2}`]({colorurl}{c2} "{c2} Color Info")⠀⠀⠀[`{c3}`]({colorurl}{c3} "{c3} Color Info")⠀⠀⠀[`{c4}`]({colorurl}{c4} "{c4} Color Info")⠀⠀⠀[`{c5}`]({colorurl}{c5} "{c5} Color Info")}
+
+{=(output):{all({isArgs}==true|{checkHex}==false):{error}
+{colorinfo}|{colorinfo}}}
+
+{=(footer):[p]palette <optional color(s)> | Requested by {user}}
+
+{=(debug):
+Colors: `{c1} {c2} {c3} {c4} {c5}`
+__Checks:__
+isArgs: {isArgs}
+isHex: {hexSum}
+modulo6: {modulo6}
+fullCheck: {fullCheck}
+
+howmanychars: {howmanychars}
+howmanyargs: {howmanyargs}
+}
+
+{=(url):https://res.cloudinary.com/demo/image/upload/w_600,h_120/l_one_pixel.png,w_120,h_120,e_colorize,co_rgb:{c1},g_west/l_one_pixel.png,w_120,h_120,e_colorize,co_rgb:{c2},g_west,x_120/l_one_pixel.png,w_120,h_120,e_colorize,co_rgb:{c3}/l_one_pixel.png,w_120,h_120,e_colorize,co_rgb:{c4},g_east,x_120/l_one_pixel.png,w_120,h_120,e_colorize,co_rgb:{c5},g_east/l_text:Montserrat_25:{c1},co_rgb:{c1.txt},g_center,x_-240/l_text:Montserrat_25:{c2},co_rgb:{c2.txt},g_center,x_-120/l_text:Montserrat_25:{c3},co_rgb:{c3.txt},g_center/l_text:Montserrat_25:{c4},co_rgb:{c4.txt},g_center,x_120/l_text:Montserrat_25:{c5},co_rgb:{c5.txt},g_center,x_240/sample.png}
+
+
+----------------------------------------------------------------
+{=(uargs):{replace(#,):{upper:{args(1)}}}}
+{=(length):{index(%^&):{replace(, ):{uargs}} %^&}}
+{=(hex2num):{replace(A,10):{replace(B,11):{replace(C,12):{replace(D,13):{replace(E,14):{replace(F,15):{uargs}}}}}}}}
+{=(hextest):{m:trunc({join(+):{replace(, ):{hex2num}}})}}
+
+{=(error):#{uargs}}
+{=(error1):There are 6 characters in a Hexidecimal Color Code (no alpha values), try again.}
+{=(error2):Hexidecimal Color Codes should only contain digits 0-9 and letters A-F, there is an invalid character present, try again.}
+
+{error{if({length}!=6):1|{if({hextest}!={m:trunc({hextest}/1)}):2}}}
+--------------------------
+{"title":"Random Color Palette","description":"⠀⠀⠀[`1F9ATC`](https://google.com/)⠀⠀⠀⠀⠀⠀[`08DBF0`](https://google.com/)⠀⠀⠀⠀⠀⠀[`2CF0F6`](https://google.com/)⠀⠀⠀⠀⠀⠀[`1E1952`](https://google.com/)⠀⠀⠀⠀⠀⠀[`1E1952`](https://google.com/)\n","image":{"url":"https://cdn.discordapp.com/attachments/337040974415003649/733682416966828062/sample.png"},"color":3092790}

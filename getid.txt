@@ -1,0 +1,15 @@
+{=(uid):{replace(!,):{replace(<@,):{replace(>,):{1}}}}}
+{=(chanid):{replace(<#,):{replace(>,):{1}}}}
+{=(spacemo):{replace(, ):{1}}}
+{=(eid):{replace(>,):{join():{spacemo(0+)::}}}}
+
+{=(error):You need to mention a channel, an emoji or a user for me to give you its ID.
+Usage: `[p]getid [channel / emoji / user mention]`}
+
+{=(COMMENT):Checks.}
+{=(userc):{if({in(@):{1}}==true):true|false}}
+{=(chanc):{if({in(<#):{1}}==true):true|false}}
+{=(emoc):{any({in(<:):{1}}==true|{in(<a:):{1}}==true):true|false}}
+
+{=(output):{if({args}==):{error}|{if({userc}==true):{uid}|{if({chanc}==true):{chanid}|{if({emoc}==true):{eid}|{error}}}}}}
+{output}
