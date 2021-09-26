@@ -1,15 +1,17 @@
-{=(uid):{replace(!,):{replace(<@,):{replace(>,):{1}}}}}
-{=(chanid):{replace(<#,):{replace(>,):{1}}}}
+{=(uid):{replace(!,):{replace(<@,):{replace(>,):{args}}}}}
+{=(rid):{replace(!,):{replace(<@&,):{replace(>,):{args}}}}}
+{=(chanid):{replace(<#,):{replace(>,):{args}}}}
 {=(spacemo):{replace(, ):{1}}}
-{=(eid):{replace(>,):{join():{spacemo(0+)::}}}}
+{=(eid2):{replace(>,):{join():{spacemo(0+)::}}}}
 
-{=(error):You need to mention a channel, an emoji or a user for me to give you its ID.
-Usage: `[p]getid [channel / emoji / user mention]`}
+{=(error):You need to mention a channel, an emoji, a role, or a user for me to give you its ID.
+Usage: `[p]idfor [channel - emoji - role - user mention]`}
 
 {=(COMMENT):Checks.}
+{=(rolec):{if({in(&):{1}}==true):true|false}}
 {=(userc):{if({in(@):{1}}==true):true|false}}
 {=(chanc):{if({in(<#):{1}}==true):true|false}}
 {=(emoc):{any({in(<:):{1}}==true|{in(<a:):{1}}==true):true|false}}
 
-{=(output):{if({args}==):{error}|{if({userc}==true):{uid}|{if({chanc}==true):{chanid}|{if({emoc}==true):{eid}|{error}}}}}}
+{=(output):{if({args(1)}==):{error}|{if({rolec}==true):{rid}|{if({userc}==true):{uid}|{if({chanc}==true):{chanid}|{if({emoc}==true):{replace(>,):{args(3)::}}|{error}}}}}}}
 {output}
